@@ -340,18 +340,26 @@
     }
 }
 
-.gr-ar {
+/*
+ * ARABIC content
+ */
+:lang(ar), :lang(ug) {
     @include font-arabic;
     font-size: 129%;
     line-height: 100%;
-    &:before {
-        content: "‹";
-        // opacity: 50%;
-        margin-right: 0.05em;
-    }
-    &:after {
-        content: "›";
-        // opacity: 50%;
-        margin-left: 0.05em;
+}
+
+/*
+ * GRAPHEME HIGHLIGHT
+ */
+em.gr {
+    display: inline-block;
+    background-color: #fff;
+    padding: 0.1em 0.2em 0.2em 0.2em;
+    border-radius: $border-radius;
+    &:lang(ar), &:lang(ug) {
+       // using the Display variant to make the Arabic shapes more pronounced
+       font-variation-settings: "opsz" 18, "slnt" 0;
+       font-weight: 450;
     }
 }
